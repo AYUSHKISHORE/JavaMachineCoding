@@ -1,0 +1,36 @@
+Question Banking
+You are need to implement the banking operation, where 
+	1)A user can create account;
+	2)Deposit the money in account(if exists);
+	3)Withdraw the money if balance available;
+	4)Transfer Money to someone else account if balance available
+		i)Note Source and Destination Account should be different and exist in system;
+		ii)Balance should available to transfer the money;
+	5)List the topSpenders based who transferred how much money
+		i)If 2 or more account holders have same amount transferred the rank them based on accountId name;
+		
+
+Explanation
+1) If account creation is successful return true else false;
+2) If Deposit is done successful return balance else blank string
+3) If Withdraw is done successful return balance else blank string
+4) If transfer is done successful return available balance else blank string
+5) For topSpender return the result in below format :-
+	which "accountId(TransferredAmt)"
+	"account1(100), account2(0)"
+
+		
+I/P ->
+{
+	{"CREATE_ACCOUNT","1","account1"},
+	{"DEPOSIT","2","account1","500"},
+	{"CREATE_ACCOUNT","3","account2"},
+	{"DEPOSIT","4","account2","100"},
+	{"TRANSFER","5","account1","account2","100"},
+	{"TOP_SPENDERS","6","2"}
+};
+
+
+Note - 1st value of inner array represent the operation and 2nd value is serial No
+
+O/P - ["true","500","true","100","400","account1(100), account2(0)"]
